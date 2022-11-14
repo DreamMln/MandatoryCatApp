@@ -6,16 +6,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".FirstFragment">
-<!--Make a scroll-->
-
-    <!--ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"-->
 
     <TextView
         android:id="@+id/textview_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/hello_you"
         />
 
     <!--sorting with spinner-->
@@ -63,19 +59,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <!--Button
-        android:id="@+id/logonButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Login"
-        /-->
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />
-
-    <!--/ScrollView-->
-
 </LinearLayout>
