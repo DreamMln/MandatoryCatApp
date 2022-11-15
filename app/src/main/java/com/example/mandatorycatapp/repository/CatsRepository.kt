@@ -28,7 +28,6 @@ class CatsRepository {
         catsService = build.create(CatsService::class.java)
         getCats()
     }
-    //ny metode
     fun getCats() {
         catsService.getAllCats().enqueue(object : Callback<List<Cat>> {
             override fun onResponse(call: Call<List<Cat>>, response: Response<List<Cat>>) {

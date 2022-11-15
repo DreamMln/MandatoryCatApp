@@ -20,7 +20,6 @@ class CatsViewModel : ViewModel() {
     fun reload(){
         catsRepository.getCats()
     }
-    //Why an int?
     //GET a cat
     operator fun get(index: Int): Cat? {
         return catsLiveData.value?.get(index)
@@ -33,9 +32,6 @@ class CatsViewModel : ViewModel() {
         catsRepository.delete(id)
     }
 
-    /*fun update(cat: Cat) {
-        catsRepository.update(cat)
-    }*/
     fun sortByName() {
         catsRepository.sortByName()
     }

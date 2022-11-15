@@ -48,13 +48,13 @@ class FirstFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         //observe logout
         binding.textviewMessage.text =
-            "Logged in user: " + authentificationViewModel.userMutableLiveData.value
+            "Logged in: " + authentificationViewModel.userMutableLiveData.value
         authentificationViewModel.userMutableLiveData.observe(viewLifecycleOwner)
         { user ->
             if (user == null)
                 binding.textviewMessage.text = "No one is logged in!"
             else
-                binding.textviewMessage.text = "Logged in user: " + user.email
+                binding.textviewMessage.text = "Logged in as user: " + user.email
         }
 
         //firebase, when user is logged in
@@ -109,13 +109,13 @@ class FirstFragment : Fragment() {
         binding.buttonFilter.setOnClickListener {
             val name = binding.edittextFilterName.text.toString().trim()
             if (name.isBlank()) {
-                 binding.edittextFilterName.error = "No name"
-                 return@setOnClickListener
+                binding.edittextFilterName.error = "No name"
+                return@setOnClickListener
+            }
             catsViewModel.filterName(name)
+
         }
     }
-
-}
 
     override fun onDestroyView() {
         super.onDestroyView()
