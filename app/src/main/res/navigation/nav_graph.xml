@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_FirstFragment_to_fragment_login"
             app:destination="@id/fragment_login" />
+        <action
+            android:id="@+id/action_FirstFragment_to_createCatFragment"
+            app:destination="@id/createCatFragment" />
     </fragment>
 
     <fragment
@@ -44,5 +47,10 @@
             app:destination="@id/FirstFragment"
             />
     </fragment>
+    <fragment
+        android:id="@+id/createCatFragment"
+        android:name="com.example.mandatorycatapp.CreateCatFragment"
+        android:label="fragment_create_cat"
+        tools:layout="@layout/fragment_create_cat" />
 
 </navigation>

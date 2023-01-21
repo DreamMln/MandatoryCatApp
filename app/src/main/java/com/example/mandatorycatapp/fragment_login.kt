@@ -32,13 +32,11 @@ class fragment_login : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val currentUser = auth.currentUser
         if (currentUser != null) {
-            //binding.emailInputField.setText(currentUser.email) // half automatic login
-            // current user exists: No need to login again
-            //findNavController().navigate(R.id.action_fragment_login_to_FirstFragment)
+
         }
         //login
         binding.messageView.text = "Current user ${currentUser?.email}"
-        binding.signIn.setOnClickListener {
+        binding.signInButton.setOnClickListener {
             val email = binding.emailInputField.text.toString().trim()
             val password = binding.passwordInputField.text.toString().trim()
             if (email.isEmpty()) {
@@ -89,6 +87,9 @@ class fragment_login : Fragment() {
                 }
             }
              */
+            binding.buttonBack.setOnClickListener {
+                findNavController().popBackStack()
+            }
 
         }
     }

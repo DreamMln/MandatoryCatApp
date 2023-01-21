@@ -97,6 +97,7 @@ class FirstFragment : Fragment() {
             findNavController().navigate(com.example.mandatorycatapp.R.id.action_FirstFragment_to_fragment_login)
         }
          */
+
         //sort button and filter
         binding.buttonSort.setOnClickListener {
             when (binding.spinnerSorting.selectedItemPosition) {
@@ -113,7 +114,13 @@ class FirstFragment : Fragment() {
                 return@setOnClickListener
             }
             catsViewModel.filterName(name)
+        }
 
+        // when create cat button is clicked, move to create cat fragment
+        binding.fabAddCat.setOnClickListener {
+            val action =
+                FirstFragmentDirections.actionFirstFragmentToCreateCatFragment()
+            findNavController().navigate(action)
         }
     }
 

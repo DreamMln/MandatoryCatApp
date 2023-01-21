@@ -9,6 +9,8 @@
 
     <string name="hello_you">Hello you</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="hello_cat">Missing Cat</string>
+
 
     <array name="sortings">
         <item>Name ascending</item>

@@ -1,67 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".FirstFragment">
+    android:id="@+id/FirstFragment"
+    >
 
-    <TextView
-        android:id="@+id/textview_message"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_you"
-        />
-
-    <!--sorting with spinner-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-       <Spinner
-            android:id="@+id/spinner_sorting"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".FirstFragment">
+
+        <TextView
+            android:id="@+id/textview_message"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:entries="@array/sortings"
-            />
-        <!-- entries defines in values / strings.xml -->
-        <Button
-            android:id="@+id/button_sort"
-            android:layout_width="wrap_content"
+             />
+
+        <!--sorting with spinner-->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sort" />
-    </LinearLayout>
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/spinner_sorting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:entries="@array/sortings" />
+            <!-- entries defines in values / strings.xml -->
+            <Button
+                android:id="@+id/button_sort"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sort" />
+        </LinearLayout>
         <!-- filter -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <EditText
-            android:id="@+id/edittext_filter_name"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="5"
-            android:hint="Name" />
-        <Button
-            android:id="@+id/button_filter"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edittext_filter_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:hint="Name" />
+
+            <Button
+                android:id="@+id/button_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Filter" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textview_error"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Filter" />
-        <Space
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="5"
-            />
+            android:layout_height="wrap_content" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/textview_error"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add_cat"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="@dimen/fab_margin"
+        android:layout_marginBottom="16dp"
+        app:srcCompat="@android:drawable/ic_input_add"
+        android:visibility="visible"
         />
-</LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

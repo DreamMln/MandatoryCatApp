@@ -8,6 +8,11 @@ plugins {
 android {
     compileSdk 33
 
+    //tilføjet
+    testOptions {
+        animationsDisabled = true
+    }
+
     defaultConfig {
         applicationId "com.example.mandatorycatapp"
         minSdk 30
@@ -19,6 +24,11 @@ android {
     }
 
     buildTypes {
+        //tilføjet
+        //debug {
+          //  testCoverageEnabled = true
+        //}
+
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
@@ -51,6 +61,5 @@ dependencies {
 
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-
     implementation "androidx.recyclerview:recyclerview:1.2.1"
 }

@@ -48,11 +48,12 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
 
-        binding.fab.setOnClickListener { view ->
+        /*binding.fabAddCat.setOnClickListener { view ->
             showDialog()
             Snackbar.make(view, "Post", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
+         */
         //indsæt
         catsViewModel.updateMessageLiveData.observe(this) { message ->
             Snackbar.make(binding.root, message, Snackbar.LENGTH_SHORT).show()
@@ -62,17 +63,18 @@ class MainActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.menu_main, menu)
-        authentificationViewModel.userMutableLiveData.observe(this)
+      /*  authentificationViewModel.userMutableLiveData.observe(this)
         { firebaseUser ->
             if (firebaseUser != null) {
-                binding.fab.visibility = View.VISIBLE
+                binding.fabAddCat.visibility = View.VISIBLE
             } else {
-                binding.fab.visibility = View.INVISIBLE
+                binding.fabAddCat.visibility = View.INVISIBLE
             }
         }
+       */
         if (FirebaseAuth.getInstance().currentUser == null) {
             //TODO this does not update after login: it needs observe prop (viewmodel)
-            val menuItem = menu.findItem(R.id.action_signout)
+            val menuItem = menu.findItem(R.id.action_button_signout)
         }
         return true
     }
@@ -84,7 +86,7 @@ class MainActivity : AppCompatActivity() {
         return when (item.itemId) {
             //added to signout
             R.id.action_settings -> true
-            R.id.action_signout -> {
+            R.id.action_button_signout -> {
                 //kalder authentificationViewModel signout()
                 authentificationViewModel.signOut()
                 /*{
@@ -101,7 +103,7 @@ class MainActivity : AppCompatActivity() {
                     */
                 true
             }
-            R.id.action_signin -> {
+            R.id.action_button_signin -> {
                 findNavController(R.id.nav_host_fragment_content_main).navigate(com.example.mandatorycatapp.R.id.action_FirstFragment_to_fragment_login)
                 true
             }
@@ -127,11 +129,13 @@ class MainActivity : AppCompatActivity() {
         val inputFieldName = EditText(this)
         // Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
         inputFieldName.setHint("Enter a name")
+        //inputFieldName.id = 5000
         inputFieldName.inputType = InputType.TYPE_CLASS_TEXT
         layout.addView(inputFieldName)
 
         val inputFieldDes = EditText(this)
         inputFieldDes.setHint("Enter a description")
+        //inputFieldName.id = 6000
         inputFieldDes.inputType = InputType.TYPE_CLASS_TEXT
         layout.addView(inputFieldDes)
 

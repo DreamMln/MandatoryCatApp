@@ -8,12 +8,12 @@
         android:title="@string/action_settings"
         app:showAsAction="never" />
     <item
-        android:id="@+id/action_signin"
+        android:id="@+id/action_button_signin"
         android:orderInCategory="9"
         android:title="Sign in"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/action_signout"
+        android:id="@+id/action_button_signout"
         android:orderInCategory="10"
         android:title="Sign out"
         app:showAsAction="always" />

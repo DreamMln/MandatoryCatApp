@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateCatFragment"
+    android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+
+            <EditText
+                android:id="@+id/cat_name_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Name of the missing cat"
+                android:inputType="text"
+                >
+            </EditText>
+
+            <EditText
+                android:id="@+id/cat_description_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Description of the missing cat"
+                android:inputType="text"
+                >
+            </EditText>
+
+            <EditText
+                android:id="@+id/cat_place_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Place of the missing cat"
+                android:inputType="text"
+               >
+            </EditText>
+
+            <EditText
+                android:id="@+id/cat_reward_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Reward for returning the cat"
+                android:inputType="number"
+                >
+            </EditText>
+
+            <EditText
+                android:id="@+id/cat_date_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Cats missing date"
+                android:inputType="number"
+            >
+            </EditText>
+
+            <!--DatePicker
+                android:id="@+id/cat_date_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:datePickerMode="calendar"
+
+                /-->
+
+            <EditText
+                android:id="@+id/cat_picture_url_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="URL for a picture of a cat"
+                android:inputType="text"
+                >
+            </EditText>
+
+            <Button
+                android:id="@+id/buttonCreateCat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Report lost cat"/>
+
+
+        </LinearLayout>
+
+
+</LinearLayout>
